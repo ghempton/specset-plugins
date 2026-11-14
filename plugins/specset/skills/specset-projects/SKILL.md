@@ -63,6 +63,8 @@ specset projects ingest-status --project <project-id> --wait --timeout 1800 --js
 
 `add-docs` returns upload metadata and the background bulk action immediately. `ingest-status --wait` follows processing and publication; omit `--wait` for a snapshot. Processing extracts each document's outline and content, indexes it for search, and splits it into candidate spec files and drawing files by page range. The status command checks workflow completion and file publication; use drawing-element or graph tools to inspect content quality.
 
+The server skips identical files already in the project's Documents list and repeated files in the same request, then creates the rest. Closeout attachments do not count as existing copies. `add-docs` prints how many duplicates were skipped; JSON includes `skippedCount` and `bulkAction.skippedCloudFileIds` alongside the uploaded `files`.
+
 ### `autoImport`: publish automatically or curate
 
 - `autoImport: true` — every generated spec/drawing file is classified and published into default sets automatically. Use when the user wants everything live immediately.

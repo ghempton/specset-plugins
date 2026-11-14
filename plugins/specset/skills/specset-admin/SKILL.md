@@ -12,11 +12,14 @@ Every operation here takes your org id — get it with `{ me { orgMembers { org 
 
 Roles (`OrgMemberTeamRole`): `Member`, `Manager`, `Admin`. Statuses (`OrgMemberStatus`): `PendingApproval`, `Active`, `Deactivated`. You need to be an org Admin for most mutations in this skill.
 
-List active members — `--role` narrows to some roles, `--json` adds each membership `id` the mutations below take:
+List active members — `--role` narrows to some built-in roles, `--privileged` to the privileged accounts, and `--json` adds each membership `id` the mutations below take:
 
 ```bash
 specset org members list --role Admin,Manager --json
+specset org members list --privileged
 ```
+
+An organization can define its own roles and change what Manager and Member allow (Members → Roles in the app). A member who holds one of the organization's own roles is listed under that role's name, and counts as `Member` for `--role`. `--privileged` lists everyone whose role is a privileged account, whatever it is called: Admins, Managers, and holders of any role that manages members, opens every project, or connects and configures integrations.
 
 Search members through the API (`orgMembers(orgId:, statuses: [...])` lists members in other statuses):
 

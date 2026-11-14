@@ -6,7 +6,7 @@ allowed-tools: Bash Read AskUserQuestion
 
 # Specset Issues
 
-Design reviews (Design Review, Drawing Review, Design Quality Review, Project Review) and issue-finding skills file **issues** on a project. Each issue can be **verified** by an adversarial agent that re-reads the cited sheets and sections and records a verdict — `Confirmed` or `Rejected` — with a short justification. New review issues are verified automatically; skill-run issues, issues filed before verification existed, and issues whose runs ended without a verdict are verified on demand.
+Design reviews (Design Quality Review, Project Review, checklist runs, and the retired Deep Design Review and Drawing Coordination Review) and issue-finding skills file **issues** on a project. Each issue can be **verified** by an adversarial agent that re-reads the cited sheets and sections and records a verdict — `Confirmed` or `Rejected` — with a short justification. New review issues are verified automatically; skill-run issues, issues filed before verification existed, and issues whose runs ended without a verdict are verified on demand.
 
 ## Reading the queue
 
