@@ -316,7 +316,7 @@ specset files download <file-resource-id> --out manual.pdf     # once workflow.s
 
 ## Enabling closeout
 
-`CloseoutAuthService.isCloseoutActive` requires the org's closeout SKU **and** (unless the org is in `fmMode`) the project's closeout toggle. Specset staff turn both on; when closeout operations report closeout as inactive, ask your Specset contact to enable it.
+`CloseoutAuthService.isCloseoutActive` requires the org's closeout SKU **and** (unless the org is in `fmMode`) the project in the Closeout or Operations phase. Specset staff turn on the SKU. Anyone who can update the project sets its phase, in Project Settings → General or with `updateProject(id: "<project-id>", phase: Operations) { id phase }`. When closeout operations report closeout as inactive, check the project's phase first; if it is Closeout or Operations, ask your Specset contact whether the organization has the closeout SKU.
 
 ## Dedup / Re-pointing
 
